@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "deploy": "forge create --rpc-url https://public-en-baobab.klaytn.net --private-key cc5f06ba9de826b09b2b0f40b7861df2daa8174407b2d0b85c87433f8d5455e1 src/PandaPass.sol:Marketplace"
+    }
+}

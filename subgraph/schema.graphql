@@ -1,0 +1,27 @@
+type Balance @entity {
+  id: ID!
+  token: Bytes!
+  account: Account!
+  amount: BigInt!
+}
+
+type Account @entity {
+  id: ID!
+  balances: [Balance!]! @derivedFrom(field: "account")
+}
+
+type User @entity {
+  id: ID!
+  memberships: [Membership!]! @derivedFrom(field: "user")
+}
+
+type Room @entity {
+  id: ID!
+  memberships: [Membership!]! @derivedFrom(field: "room")
+}
+
+type Membership @entity {
+  id: ID!
+  user: User!
+  room: Room!
+}

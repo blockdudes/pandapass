@@ -1,0 +1,45 @@
+specVersion: 0.0.4
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: Marketplace
+    network: klaytn
+    source:
+      address: "0x91D44b3711C588Ae71797BEC7d6F56BaEF231A1e"
+      abi: Marketplace
+      startBlock: 139790093
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Account
+        - Balance
+      abis:
+        - name: Marketplace
+          file: ./abis/Marketplace.json
+      eventHandlers:
+        - event: RegisterToken(string,string,address,address)
+          handler: handleRegisterToken
+      file: ./src/mapping.ts
+templates:
+  - kind: ethereum
+    name: Token
+    network: klaytn
+    source:
+      abi: Token
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - Account
+        - Balance
+      abis:
+        - name: Token
+          file: ./abis/Token.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts

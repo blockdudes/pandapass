@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  pandapass:
+    container_name: pandapass
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    external: true
