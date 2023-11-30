@@ -9,7 +9,6 @@ COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 COPY src ./src
 COPY public ./public
 COPY next.config.js .
-COPY tsconfig.json .
 
 
 # Next.js collects completely anonymous telemetry data about general usage. Learn more here: https://nextjs.org/telemetry
