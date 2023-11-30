@@ -6,9 +6,12 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+
+    ports:
+      [3000:3000]
     restart: always
 
-networks: 
-  default: 
-    external: true
-    name: external
+# networks: 
+#   default: 
+#     external: true
+#     name: external
