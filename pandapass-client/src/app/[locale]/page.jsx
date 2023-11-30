@@ -48,7 +48,7 @@ export default function Home() {
   //           photo: data.photoURL,
   //           tokenAddress: receipt.events[0].args.tokenAddress.toLowerCase(),
   //         }
-  //         const addOwner = setData(`http://localhost:3004/api/AddOwnerData`, { data: result })
+  //         const addOwner = setData(`https://pandapass.blockdudes.com/api/AddOwnerData`, { data: result })
         
   //         localStorage.setItem("user", JSON.stringify({
   //           email: data.email,
@@ -80,7 +80,7 @@ export default function Home() {
   //   try {
   //     const result = await getTokenId();
   //     if (result) {
-  //       const response = await setData(`http://localhost:3004/api/decodeToken/${result}`)
+  //       const response = await setData(`https://pandapass.blockdudes.com/api/decodeToken/${result}`)
   //       console.log("enter response", response)
   //     }
   //     setRes(result)
@@ -95,7 +95,7 @@ export default function Home() {
   //   try {
   //     console.log("first")
   //     // '0xc11c70b789a3c56dd09631593089b0d1d30c2166'
-  //     const response = await setData(`http://localhost:3004/api/checkUserChatStatus/${address}`)
+  //     const response = await setData(`https://pandapass.blockdudes.com/api/checkUserChatStatus/${address}`)
   //   }
   //   catch (error) {
   //     console.log(error);

@@ -13,7 +13,7 @@ const page = () => {
 
   const fetchUserChatData = async() => {
     
-    const userData = await setData('http://localhost:3004/api/getUserDetails')
+    const userData = await setData('https://pandapass.blockdudes.com/api/getUserDetails')
     // setUserChatData(userData)
   }
   useEffect(() => {

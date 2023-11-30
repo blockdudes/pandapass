@@ -14,7 +14,7 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3004](http://localhost:3004) with your browser to see the result.
+Open [https://pandapass.blockdudes.com](https://pandapass.blockdudes.com) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 

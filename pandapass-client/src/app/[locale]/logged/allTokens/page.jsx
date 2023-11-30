@@ -27,7 +27,7 @@ const page = () => {
 
       if(arrayofTokens){
         
-        const completeData =await setData("http://localhost:3004/api/getOwnerData",{arrayofTokens});
+        const completeData =await setData("https://pandapass.blockdudes.com/api/getOwnerData",{arrayofTokens});
         setAllTokensData(completeData);
         localStorage.setItem("allTokens",JSON.stringify(completeData?.data))
       }

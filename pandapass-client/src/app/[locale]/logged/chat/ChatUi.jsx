@@ -23,7 +23,7 @@ const ChatUi = () => {
   const getData = async () => {
     try {
       const address = localStorage.getItem("status")
-      const fetchRoms = await setData(`http://localhost:3004/api/getRoomsInUser/${address}`)
+      const fetchRoms = await setData(`https://pandapass.blockdudes.com/api/getRoomsInUser/${address}`)
       console.log(fetchRoms);
       if (fetchRoms.roomIds.length > 0) {
         const Chats = await getFirebaseData()
@@ -104,7 +104,7 @@ const ChatUi = () => {
 
   const handleSubmit = async (tokenAddress, userID,  message) => {
     // chatting function
-    await setData("http://localhost:3004/api/sendMessageInRoom", {data: {tokenAddress, userID,  message}})
+    await setData("https://pandapass.blockdudes.com/api/sendMessageInRoom", {data: {tokenAddress, userID,  message}})
     setInputMessage('')
     await getData()
   };

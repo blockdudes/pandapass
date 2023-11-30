@@ -75,7 +75,7 @@ const UserAssetsList = () => {
   useEffect(() => {
 
     const getData = async () => {
-      const data = await setData(`http://localhost:3004/api/userOwnedTokens/${address}`);
+      const data = await setData(`https://pandapass.blockdudes.com/api/userOwnedTokens/${address}`);
       const allTokensData = JSON.parse(localStorage.getItem("allTokens"));
       
       console.log(allTokensData, data)

@@ -63,7 +63,7 @@ const Navbar = () => {
             photo: data.photoURL,
             tokenAddress: receipt.events[0].args.tokenAddress.toLowerCase(),
           }
-          const addOwner = setData(`http://localhost:3004/api/AddOwnerData`, { data: result })
+          const addOwner = setData(`https://pandapass.blockdudes.com/api/AddOwnerData`, { data: result })
           // setUserData(JSON.stringify({
           //   email: data.email,
           //   displayName: data.displayName,

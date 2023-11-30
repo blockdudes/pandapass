@@ -11,7 +11,10 @@ RUN npm i
 COPY src ./src
 COPY public ./public
 COPY next.config.js .
-
+COPY jsconfig.json .
+COPY firebase.config.js .
+COPY firebase.admin.config.js .
+COPY serviceAccountKey.json .
 # Next.js collects completely anonymous telemetry data about general usage. Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line to disable telemetry at build time
 # ENV NEXT_TELEMETRY_DISABLED 1
@@ -19,12 +22,7 @@ COPY next.config.js .
 # Note: Don't expose ports here, Compose will handle that for us
 
 # Build Next.js based on the preferred package manager
-RUN \
-  if [ -f yarn.lock ]; then yarn build; \
-  elif [ -f package-lock.json ]; then npm run build; \
-  elif [ -f pnpm-lock.yaml ]; then pnpm build; \
-  else yarn build; \
-  fi
+RUN npm run build
 
 # Start Next.js based on the preferred package manager
 CMD \
