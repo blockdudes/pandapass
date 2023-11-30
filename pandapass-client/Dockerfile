@@ -6,7 +6,7 @@ WORKDIR /app
 COPY package.json yarn.lock* package-lock.json* pnpm-lock.yaml* ./
 # Omit --production flag for TypeScript devDependencies
 
-RUN npm run i
+RUN npm i
 
 COPY src ./src
 COPY public ./public
