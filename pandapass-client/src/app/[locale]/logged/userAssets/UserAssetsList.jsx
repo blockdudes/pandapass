@@ -174,34 +174,26 @@ const UserAssetsList = () => {
                   <tbody>
                     {UserAssetsListData?.map(
                       (
-                        {
-                          
-                          ownerData,
-                          tokenPrice,
-                          tokenName,
-                          // tokenInitialPrice,
-                          amount,
-                          // currentTokenPrice,
-                          // status,
-                        },
+                        data,
                         index,
                       ) => {
+                        if (!data) return <></>
                         const isLast = index === TABLE_ROWS.length - 1;
                         const classes = isLast
                           ? "p-4"
                           : "p-4 border-b border-blue-gray-50";
 
                         return (
-                          <tr key={tokenName}>
+                          <tr key={data.tokenName}>
                             <td className={classes}>
                               <div className="flex items-center gap-3">
-                                <Avatar src={ownerData?.photo} size="md" className="border border-blue-gray-50 bg-blue-gray-50/50 object-contain p-1"/>
+                                <Avatar src={data.ownerData?.photo} size="md" className="border border-blue-gray-50 bg-blue-gray-50/50 object-contain p-1"/>
                                 <Typography
                                   variant="small"
                                   color="blue-gray"
                                   className="font-bold"
                                 >
-                                  {tokenName}
+                                  {data.tokenName}
                                 </Typography>
                               </div>
                             </td>
@@ -212,7 +204,7 @@ const UserAssetsList = () => {
                                 className="font-normal"
                               >
                                 
-                                {Number(tokenPrice?.hex)/1e18} KLAY
+                                {Number(data.tokenPrice?.hex)/1e18} KLAY
                               </Typography>
                             </td>
                             <td className={classes}>
@@ -223,7 +215,7 @@ const UserAssetsList = () => {
                                   className="font-normal"
                                 >
                                   {/* {parseInt(tokenAmount?._hex, 16)} */}
-                                  {amount}
+                                  {data.amount}
                                 </Typography>
                               </div>
                             </td>
