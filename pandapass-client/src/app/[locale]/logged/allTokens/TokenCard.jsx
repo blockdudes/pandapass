@@ -102,19 +102,19 @@ const TokenCard = () => {
           </thead>
           <tbody>
             {allTokensData?.data?.map(
-              ({ tokenPrice,tokenName,sellerAddress, ownerData}, index) => {
+              (data, index) => {
                 const isLast = index === allTokensData?.data?.length - 1;
                 const classes = isLast
                   ? "p-4"
                   : "p-4 border-b border-blue-gray-50 ";
- 
+                if (!data) return <></>
                 return (
-                  <tr className='cursor-pointer' key={tokenName} onClick={()=>handleRoute(index)}>
+                  <tr className='cursor-pointer' key={data.tokenName} onClick={()=>handleRoute(index)}>
                     <td className={classes} >
                       <div className="flex items-center gap-3">
                       <Avatar
-                        src={ownerData?.photo}
-                        alt={ownerData?.name}
+                        src={data.ownerData?.photo}
+                        alt={data.ownerData?.name}
                         size='md'
                         className="border border-blue-gray-50 bg-blue-gray-50/50 object-contain p-1"
                       />
@@ -124,7 +124,7 @@ const TokenCard = () => {
                             color="blue-gray"
                             className="font-normal"
                           >
-                            {tokenName}
+                            {data.tokenName}
                           </Typography>
                           <Typography
                             variant="small"
@@ -145,7 +145,7 @@ const TokenCard = () => {
                       >
                         {/* {parseInt(tokenInitialPrice?._hex, 16)/Math.pow(10,18)} eth */}
                         {/* {parseInt(tokenPrice?.hex,10)/Math.pow(10,18)} eth  */}
-                        {Number(tokenPrice?.hex)/Math.pow(10,18)} KLAY
+                        {Number(data.tokenPrice?.hex)/Math.pow(10,18)} KLAY
                       </Typography>
                     </td>
                     <td className={classes}>
@@ -154,7 +154,7 @@ const TokenCard = () => {
                         color="blue-gray"
                         className="font-normal"
                       >
-                        {tokenName}
+                        {data.tokenName}
                       </Typography>
                     </td>
                     <td className={classes}>
